@@ -51,12 +51,31 @@ Gaps and differences identified between research findings and the implementation
 
 Items identified during planning that fall outside current scope.
 
-* WI-01: Define repository-standard lint and test baseline for Vue projects — Establish package scripts and lint/test tooling conventions before implementation starts (high)
-  * Source: DR-01 and subagent unresolved gaps
-  * Dependency: Team confirmation of preferred tooling
 * WI-02: Decide CI requirement for POC — Confirm whether automated build/test pipeline is required for sign-off (medium)
   * Source: DR-03
   * Dependency: Stakeholder decision on delivery quality gate
 * WI-03: Document browser support matrix — Specify required browsers and versions for acceptance testing (medium)
   * Source: DR-02
   * Dependency: Product and QA alignment
+* WI-04: Add route guards for invalid direct navigation — Redirect direct `/checkout` or `/tracking` access when required cart/order state is missing (medium)
+  * Source: Phase 2 suggestion
+  * Dependency: Phase 3 integration updates
+* WI-05: Add checkout-to-tracking integration test — Add one high-value integration test covering submit and transition path (medium)
+  * Source: Phase 2 suggestion
+  * Dependency: Test strategy decision for MVP scope
+* WI-06: Decide whether to persist cart/order in session storage — Clarify refresh behavior expectation for MVP and implement only if required (low)
+  * Source: Phase 2 suggestion
+  * Dependency: Product behavior confirmation
+* WI-07: Complete explicit breakpoint visual verification at 375px, 768px, and 1280px in a full browser/device matrix (medium)
+  * Source: Phase 3 and Phase 4 validation constraint in tool browser environment
+  * Dependency: Access to local browser devtools/device emulation or external device lab
+
+## Execution Notes
+
+* 2026-04-20: Phase 1 completed. Vue 3 plus Vite scaffolded in repository root, router flow established for Catalog -> Cart -> Checkout -> Tracking, and lint/build scripts validated.
+* 2026-04-20: WI-01 closed during implementation by adding ESLint flat config, `npm run lint`, and `npm run test --passWithNoTests` baseline with README guidance.
+* 2026-04-20: Phase 2 completed. Implemented cart, checkout, and order tracking composables plus countdown/status utilities and tracking UI components.
+* 2026-04-20: Phase 2 validation passed with `npm run lint`, targeted tests (`npm run test -- countdownTimer orderStatusFlow`), and `npm run build`.
+* 2026-04-20: Phase 3 completed. Added responsive layout layers, reusable ProductList/CartSummary/CheckoutForm components, keyboard skip-link support, and explicit checkout validation summary with ARIA feedback. Validation passed with `npm run lint`, `npm run build`, and manual Catalog -> Cart -> Checkout -> Tracking flow.
+* 2026-04-20: Phase 4 completed. Full validation passed with `npm run lint`, `npm run build`, targeted tests (`npm run test -- countdownTimer orderStatusFlow`), and manual smoke flow across Catalog -> Cart -> Checkout -> Tracking. No blocking issues found.
+* 2026-04-20: Deferred WI-07 after Phase 4: exact manual visual checks at 375/768/1280 remain pending full viewport tooling outside current browser constraints.

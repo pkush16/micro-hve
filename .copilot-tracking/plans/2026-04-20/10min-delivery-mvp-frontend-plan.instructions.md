@@ -41,56 +41,56 @@ Implement a frontend-only 10-minute delivery MVP using Vue 3 plus Vite with a 4-
 
 ## Implementation Checklist
 
-### [ ] Implementation Phase 1: Project setup and architecture baseline
+### [x] Implementation Phase 1: Project setup and architecture baseline
 
 <!-- parallelizable: false -->
 
-* [ ] Step 1.1: Scaffold Vue 3 plus Vite application
+* [x] Step 1.1: Scaffold Vue 3 plus Vite application
   * Details: .copilot-tracking/details/2026-04-20/10min-delivery-mvp-frontend-details.md (Lines 11-33)
-* [ ] Step 1.2: Establish routing and top-level view flow
+* [x] Step 1.2: Establish routing and top-level view flow
   * Details: .copilot-tracking/details/2026-04-20/10min-delivery-mvp-frontend-details.md (Lines 35-56)
-* [ ] Step 1.3: Finalize lint and test toolchain baseline
+* [x] Step 1.3: Finalize lint and test toolchain baseline
   * Details: .copilot-tracking/details/2026-04-20/10min-delivery-mvp-frontend-details.md (Lines 58-79)
-* [ ] Step 1.4: Validate phase changes
+* [x] Step 1.4: Validate phase changes
   * Details: .copilot-tracking/details/2026-04-20/10min-delivery-mvp-frontend-details.md (Lines 81-87)
 
-### [ ] Implementation Phase 2: Core domain logic and UI behavior
+### [x] Implementation Phase 2: Core domain logic and UI behavior
 
 <!-- parallelizable: true -->
 
-* [ ] Step 2.1: Implement cart, checkout, and order state with Composition API
+* [x] Step 2.1: Implement cart, checkout, and order state with Composition API
   * Details: .copilot-tracking/details/2026-04-20/10min-delivery-mvp-frontend-details.md (Lines 93-115)
-* [ ] Step 2.2: Implement countdown timer and delivery status progression
+* [x] Step 2.2: Implement countdown timer and delivery status progression
   * Details: .copilot-tracking/details/2026-04-20/10min-delivery-mvp-frontend-details.md (Lines 117-137)
-* [ ] Step 2.3: Validate phase changes
+* [x] Step 2.3: Validate phase changes
   * Details: .copilot-tracking/details/2026-04-20/10min-delivery-mvp-frontend-details.md (Lines 139-147)
 
-### [ ] Implementation Phase 3: Responsive styling, accessibility, and integration polish
+### [x] Implementation Phase 3: Responsive styling, accessibility, and integration polish
 
 <!-- parallelizable: false -->
 
-* [ ] Step 3.1: Implement responsive layouts and interaction polish
+* [x] Step 3.1: Implement responsive layouts and interaction polish
   * Details: .copilot-tracking/details/2026-04-20/10min-delivery-mvp-frontend-details.md (Lines 153-175)
-* [ ] Step 3.2: Validate phase changes
+* [x] Step 3.2: Validate phase changes
   * Details: .copilot-tracking/details/2026-04-20/10min-delivery-mvp-frontend-details.md (Lines 177-184)
 
-### [ ] Implementation Phase 4: Validation
+### [x] Implementation Phase 4: Validation
 
 <!-- parallelizable: false -->
 
-* [ ] Step 4.1: Run full project validation
+* [x] Step 4.1: Run full project validation
   * Execute all lint commands (npm run lint, language linters)
   * Execute build scripts for all modified components
   * Run targeted high-value tests for timer and flow logic
   * Run full test suite only when configured and required by agreed project baseline
-* [ ] Step 4.2: Fix minor validation issues
+* [x] Step 4.2: Fix minor validation issues
   * Iterate on lint errors and build warnings
   * Apply fixes directly when corrections are straightforward
-* [ ] Step 4.3: Report blocking issues
+* [x] Step 4.3: Report blocking issues
   * Document issues requiring additional research
   * Provide user with next steps and recommended planning
   * Avoid large-scale fixes within this phase
-* [ ] Step 4.4: Publish implementation outcome summary and deferred scope handoff
+* [x] Step 4.4: Publish implementation outcome summary and deferred scope handoff
   * Capture artifacts produced and remaining deferred items
   * Link deferred items to planning log work items
 
