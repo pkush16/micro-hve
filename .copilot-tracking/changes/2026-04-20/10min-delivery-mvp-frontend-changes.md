@@ -32,6 +32,7 @@ Frontend MVP implementation for a 4-screen 10-minute delivery flow using Vue 3 p
 * src/components/DeliveryTimeline.vue - Delivery milestone timeline component
 * src/utils/__tests__/countdownTimer.test.js - Targeted tests for countdown utility behavior
 * src/utils/__tests__/orderStatusFlow.test.js - Targeted tests for order status transitions
+* src/composables/__tests__/checkoutToTracking.integration.test.js - Integration coverage for checkout-to-tracking handoff state
 
 ### Modified
 
@@ -76,8 +77,42 @@ Implementation Phase 4 completed with full validation execution. `npm run lint` 
 
 * `npm run lint`: passed
 * `npm run build`: passed
-* `npm run test -- countdownTimer orderStatusFlow`: passed (2 files, 4 tests)
+* `npm run test -- countdownTimer orderStatusFlow`: passed (2 files, 5 tests)
 * Manual smoke flow: passed (Catalog -> Cart -> Checkout -> Tracking with order creation and timer/timeline rendering)
+
+## Reproducible Smoke Validation Artifact
+
+Date: 2026-04-20
+Environment: local Vite app at `http://127.0.0.1:4173`
+Method: automated browser checks using Playwright page evaluation across required breakpoints and routes
+
+Routes validated:
+
+* `/`
+* `/cart`
+* `/checkout`
+* `/tracking`
+
+Breakpoints validated:
+
+* 375px
+* 768px
+* 1280px
+
+Checks executed per route and breakpoint:
+
+* Main region exists (`main#main-content`)
+* Screen container exists (`.screen`)
+* No horizontal overflow (`documentElement.scrollWidth <= window.innerWidth`)
+* Active nav button background color is sage green (`rgb(107, 143, 113)`)
+* Flow button background color is sage green where primary action exists (`rgb(107, 143, 113)`)
+
+Observed outcomes:
+
+* No horizontal overflow at 375px, 768px, and 1280px for all validated routes
+* Navigation active state color consistently resolved to sage green
+* Primary flow actions resolved to sage green where present
+* Cart muted actions resolved to muted sage (`rgb(122, 143, 130)`), as designed
 
 ## Deferred Scope Handoff
 

@@ -48,4 +48,24 @@ describe('countdownTimer', () => {
     expect(snapshot.isRunning).toBe(false)
     expect(onComplete).toHaveBeenCalledTimes(1)
   })
+
+  it('completes immediately when initial elapsed already meets duration', () => {
+    const onComplete = vi.fn()
+
+    const timer = createCountdownTimer({
+      durationMs: 3_000,
+      initialElapsedMs: 3_500,
+      tickIntervalMs: 250,
+      onComplete,
+    })
+
+    timer.start()
+    vi.advanceTimersByTime(2_000)
+
+    const snapshot = timer.getSnapshot()
+    expect(snapshot.elapsedMs).toBe(3_000)
+    expect(snapshot.remainingMs).toBe(0)
+    expect(snapshot.isRunning).toBe(false)
+    expect(onComplete).toHaveBeenCalledTimes(1)
+  })
 })

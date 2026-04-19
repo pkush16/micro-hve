@@ -108,6 +108,16 @@ Quality report: [.copilot-tracking/reviews/2026-04-20/10min-delivery-mvp-fronten
 
 Needs Rework
 
+## Rework Resolution Update (2026-04-20)
+
+The following action items from this review have been addressed:
+
+1. Countdown timer immediate-completion leak and repeated callback risk fixed in `src/utils/countdownTimer.js`.
+2. Added automated edge-case coverage for `initialElapsedMs >= durationMs` in `src/utils/__tests__/countdownTimer.test.js`.
+3. Added checkout-to-tracking integration coverage in `src/composables/__tests__/checkoutToTracking.integration.test.js`.
+4. Added reproducible smoke validation artifact with explicit 375px, 768px, and 1280px verification in `.copilot-tracking/changes/2026-04-20/10min-delivery-mvp-frontend-changes.md`.
+5. Documented dependency-budget semantics as runtime-dependencies-only in `README.md`.
+
 ## Reviewer Notes
 
 RPI validation completed across all four phases with partial status in each phase due evidence and closure gaps. Independent command validations passed locally. Review outcome is `Needs Rework` due one confirmed runtime issue and multiple major validation-closure gaps.

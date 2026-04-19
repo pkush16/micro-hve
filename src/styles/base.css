@@ -3,11 +3,11 @@
   --color-surface: #ffffff;
   --color-surface-muted: #f4f7fb;
   --color-border: #d5deea;
-  --color-primary: #ee5f32;
-  --color-primary-dark: #d94a1d;
-  --color-muted: #4f5d73;
+  --color-primary: #6b8f71;
+  --color-primary-dark: #5a7b61;
+  --color-muted: #7a8f82;
   --color-danger: #b42318;
-  --focus-ring: #1a73e8;
+  --focus-ring: #4f7f65;
 
   font-family: 'Avenir Next', 'Segoe UI', sans-serif;
   line-height: 1.5;
@@ -81,8 +81,16 @@ input {
   background: var(--color-muted);
 }
 
+.flow-link--muted:hover {
+  background: color-mix(in srgb, var(--color-muted) 88%, black);
+}
+
 .flow-link--danger {
   background: var(--color-danger);
+}
+
+.flow-link--danger:hover {
+  background: color-mix(in srgb, var(--color-danger) 88%, black);
 }
 
 .placeholder-text {

@@ -42,15 +42,15 @@
 
 .top-nav a {
   text-decoration: none;
-  color: #17212f;
+  color: var(--color-primary-dark);
   padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid #17212f;
+  border: 1px solid var(--color-primary);
   font-weight: 600;
 }
 
 .top-nav a.router-link-active {
-  background-color: #17212f;
+  background-color: var(--color-primary);
   color: #ffffff;
 }
 

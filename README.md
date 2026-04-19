@@ -50,3 +50,9 @@ npm run test
 This MVP baseline treats tests as conditional during early phases.
 `npm run test` is configured with `--passWithNoTests`, so it succeeds when no test files exist yet.
 As feature logic lands in later phases, add high-value tests and remove this temporary allowance when the suite is established.
+
+## Dependency Budget Rule
+
+Dependency budget enforcement for this MVP applies to runtime dependencies only.
+In this repository, runtime dependencies are listed under `dependencies` in `package.json`.
+Tooling-only packages under `devDependencies` are excluded from runtime budget checks.

@@ -53,6 +53,11 @@ export const createCountdownTimer = ({
     isRunning = true
     emitTick()
 
+    // emitTick can complete synchronously when elapsed is already at duration.
+    if (!isRunning) {
+      return
+    }
+
     intervalId = setInterval(emitTick, safeTickIntervalMs)
 
     if (typeof document !== 'undefined') {
