@@ -20,9 +20,15 @@
 
     <ul v-else class="catalog-list">
       <li v-for="product in filteredProducts" :key="product.id" class="catalog-list__item">
+        <img
+          class="catalog-list__image"
+          :src="product.image"
+          :alt="`${product.name} product image`"
+          loading="lazy"
+        />
         <div class="catalog-list__name-row">
           <h3>{{ product.name }}</h3>
-          <span>${{ product.price.toFixed(2) }}</span>
+          <span>{{ formatCurrencyInr(product.price) }}</span>
         </div>
         <p>Available: {{ product.availableQty }}</p>
         <button
@@ -43,6 +49,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { RouterLink } from 'vue-router'
+import { formatCurrencyInr } from '../utils/currency'
 
 const props = defineProps({
   products: {

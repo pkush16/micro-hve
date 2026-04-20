@@ -22,7 +22,7 @@
           :value="checkoutForm.fullName"
           type="text"
           class="input-control"
-          placeholder="Alex Johnson"
+          placeholder="Asha Sharma"
           autocomplete="name"
           :aria-invalid="Boolean(submissionAttempted && fieldErrors.fullName)"
           :aria-describedby="submissionAttempted && fieldErrors.fullName ? 'fullName-error' : undefined"
@@ -43,7 +43,7 @@
           :value="checkoutForm.street"
           type="text"
           class="input-control"
-          placeholder="123 Main Street"
+          placeholder="221 MG Road"
           autocomplete="address-line1"
           :aria-invalid="Boolean(submissionAttempted && fieldErrors.street)"
           :aria-describedby="submissionAttempted && fieldErrors.street ? 'street-error' : undefined"
@@ -60,7 +60,7 @@
           :value="checkoutForm.city"
           type="text"
           class="input-control"
-          placeholder="Seattle"
+          placeholder="Bengaluru"
           autocomplete="address-level2"
           :aria-invalid="Boolean(submissionAttempted && fieldErrors.city)"
           :aria-describedby="submissionAttempted && fieldErrors.city ? 'city-error' : undefined"
@@ -72,12 +72,12 @@
       </label>
 
       <label>
-        Postcode
+        PIN Code
         <input
           :value="checkoutForm.postcode"
           type="text"
           class="input-control"
-          placeholder="98101"
+          placeholder="560001"
           autocomplete="postal-code"
           :aria-invalid="Boolean(submissionAttempted && fieldErrors.postcode)"
           :aria-describedby="submissionAttempted && fieldErrors.postcode ? 'postcode-error' : undefined"
@@ -92,7 +92,7 @@
         </span>
       </label>
 
-      <p class="cart-total">Order Total: ${{ subtotal.toFixed(2) }}</p>
+      <p class="cart-total">Order Total: {{ formatCurrencyInr(subtotal) }}</p>
 
       <div class="actions-row">
         <RouterLink to="/cart" class="flow-link flow-link--muted">Back to Cart</RouterLink>
@@ -105,6 +105,7 @@
 <script setup>
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
+import { formatCurrencyInr } from '../utils/currency'
 
 const props = defineProps({
   checkoutForm: {

@@ -15,7 +15,7 @@
   left: -9999px;
   top: 8px;
   z-index: 10;
-  background: #17212f;
+  background: #2d3d36;
   color: #ffffff;
   padding: 8px 10px;
   border-radius: 8px;
@@ -47,6 +47,7 @@
   border-radius: 999px;
   border: 1px solid var(--color-primary);
   font-weight: 600;
+  background: color-mix(in srgb, var(--color-primary) 10%, white);
 }
 
 .top-nav a.router-link-active {
@@ -55,7 +56,7 @@
 }
 
 .top-nav a:focus-visible {
-  outline: 3px solid color-mix(in srgb, #1a73e8 40%, transparent);
+  outline: 3px solid color-mix(in srgb, var(--color-primary-dark) 40%, transparent);
   outline-offset: 1px;
 }
 
@@ -64,12 +65,13 @@ main {
 }
 
 .screen {
-  background: #ffffff;
-  border: 1px solid #d5deea;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 18px;
   padding: 20px;
   display: grid;
   gap: 16px;
+  box-shadow: 0 8px 24px rgba(107, 143, 113, 0.08);
 }
 
 .screen__header {
@@ -109,11 +111,20 @@ main {
 }
 
 .catalog-list__item {
-  border: 1px solid #e2e7ef;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 30%, white);
   border-radius: 12px;
   padding: 12px;
   display: grid;
   gap: 10px;
+  background: color-mix(in srgb, var(--color-primary) 6%, white);
+}
+
+.catalog-list__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 28%, white);
 }
 
 .catalog-list__name-row {
@@ -142,7 +153,7 @@ main {
 }
 
 .cart-list__item {
-  border: 1px solid #e2e7ef;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 30%, white);
   border-radius: 12px;
   padding: 12px;
   display: flex;
@@ -150,6 +161,7 @@ main {
   justify-content: space-between;
   gap: 12px;
   align-items: center;
+  background: color-mix(in srgb, var(--color-primary) 6%, white);
 }
 
 .cart-list__name {

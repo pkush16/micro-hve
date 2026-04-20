@@ -1,19 +1,19 @@
 :root {
-  --color-ink: #17212f;
-  --color-surface: #ffffff;
-  --color-surface-muted: #f4f7fb;
-  --color-border: #d5deea;
+  --color-ink: #2d3d36;
+  --color-surface: #fafbfa;
+  --color-surface-muted: #f0f5f2;
+  --color-border: #d8e3db;
   --color-primary: #6b8f71;
   --color-primary-dark: #5a7b61;
-  --color-muted: #7a8f82;
+  --color-muted: #8fa892;
   --color-danger: #b42318;
-  --focus-ring: #4f7f65;
+  --focus-ring: #5a7b61;
 
   font-family: 'Avenir Next', 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: var(--color-ink);
-  background: radial-gradient(circle at top right, #f5f0d7, #ffffff 45%);
+  background: radial-gradient(circle at top right, #e8f0eb 0%, #f5faf7 42%, #fafbfa 72%);
 }
 
 * {
@@ -157,7 +157,7 @@ input {
 
 .tracking-order-id {
   margin: 0;
-  color: #405068;
+  color: #506b57;
 }
 
 .tracking-timer {
@@ -184,7 +184,7 @@ input {
   grid-template-columns: 14px 1fr;
   gap: 10px;
   align-items: center;
-  color: #5a6578;
+  color: #6b7f73;
 }
 
 .delivery-timeline__item--reached {

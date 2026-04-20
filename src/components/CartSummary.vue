@@ -10,7 +10,7 @@
       <li v-for="item in cartItems" :key="item.productId" class="cart-list__item">
         <div>
           <p class="cart-list__name">{{ item.name }}</p>
-          <p class="cart-list__meta">${{ item.price.toFixed(2) }} each</p>
+          <p class="cart-list__meta">{{ formatCurrencyInr(item.price) }} each</p>
         </div>
 
         <div class="cart-list__controls" :aria-label="`Adjust quantity for ${item.name}`">
@@ -43,7 +43,7 @@
       </li>
     </ul>
 
-    <p class="cart-total">Subtotal: ${{ subtotal.toFixed(2) }}</p>
+    <p class="cart-total">Subtotal: {{ formatCurrencyInr(subtotal) }}</p>
 
     <div class="actions-row">
       <RouterLink to="/" class="flow-link flow-link--muted">Back to Catalog</RouterLink>
@@ -54,6 +54,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import { formatCurrencyInr } from '../utils/currency'
 
 defineProps({
   cartItems: {
