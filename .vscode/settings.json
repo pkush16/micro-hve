@@ -3,6 +3,7 @@
         "mkdir": true,
         "npm create": true,
         "set": true,
-        "printf": true
+        "printf": true,
+        "npm install": true
     }
 }
